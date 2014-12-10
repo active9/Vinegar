@@ -1,7 +1,6 @@
 <html>
 <head>
 	<title>Vinegar.js AJAX Example</title>
-
 	<script src="../Vinegar.js"></script>
 </head>
 <body>
@@ -9,7 +8,6 @@
 /*
  * loadXMLDoc()
  * adapted from http://www.w3schools.com/ajax/tryit.asp?filename=tryajax_first
- * NOTE: This will not run from file:// as it requires json headers to be passed by a server!
  *
  */
 var templatedata;
@@ -21,12 +19,12 @@ function loadXMLDoc(url) {
 			xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
 		}
 		xmlhttp.onreadystatechange=function() {
-		if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-			templatedata = xmlhttp.responseText;
+		if (xmlhttp.readyState==4 && (xmlhttp.status==200 || xmlhttp.status==0)) {
+			templatedata = JSON.parse(xmlhttp.responseText);
 			Vinegar.template(document,templatedata);
 		}
 	}
-	xmlhttp.open("GET","template.json",true);
+	xmlhttp.open("GET","ajaxtemplate.json",true);
 	xmlhttp.send();
 }
 

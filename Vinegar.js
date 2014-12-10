@@ -1,7 +1,7 @@
 /*
  * Vinegar - Javascript <{Template Engine}>
  * @Copyright 2014 Active9 LLC.
- * VERSION: 1.0 RC1
+ * VERSION: 1.0 RC2
  * SOURCE: https://github.com/active9/Vinegar/
  * LICENSE: MIT
  *
@@ -36,6 +36,7 @@ var Vinegar = {
 	/*
 	 * Vinegar - define our template chemistry set
 	 */
+	node: typeof process !== "undefined" &&  {}.toString.call(process) === "[object process]",
 	this: Vinegar,
 	CH3: "<{",
 	CH3enc: "&lt;{",
@@ -116,7 +117,7 @@ var Vinegar = {
 			var obj = datajson[i];
 			for(key in obj) {
 				if (typeof obj[key] == "object") {
-                			var lo = templatedata.match(new RegExp(this.CH3+"#"+key+this.COOH+"\\s.*\\s"+this.CH3+"\\/"+key+this.COOH, "g")) || templatedata.match(new RegExp(this.CH3enc+"#"+key+this.COOHenc+"\\s.*\\s"+this.CH3enc+"\\/"+key+this.COOHenc, "g"));
+                			var lo = templatedata.match(new RegExp("\\t*"+this.CH3+"#"+key+this.COOH+"(||.*||\\s||\\s.*||.*\\s*||\\s.*\\s*||\\s*.*\\s*)"+this.CH3+"\\/"+key+this.COOH, "g")) || templatedata.match(new RegExp("\\t*"+this.CH3enc+"#"+key+this.COOHenc+"(||.*||\\s||\\s.*||.*\\s*||\\s.*\\s*||\\s*.*\\s*)"+this.CH3enc+"\\/"+key+this.COOHenc, "g"));
 					if (lo) {
 						var loobj = obj[key];
 						for (var l=0;l<lo.length;l++) {
@@ -130,8 +131,8 @@ var Vinegar = {
 							for (var u=0;u<loobj.length;u++) {
 								templatedatax += this.metabolize(null,looptemplate,[loobj[u]]);
 							}
-							templatedata = templatedata.replace(new RegExp(this.CH3+"#"+lkey+this.COOH+"\\s.*\\s"+this.CH3+"\\/"+lkey+this.COOH, "g"), templatedatax);
-							templatedata = templatedata.replace(new RegExp(this.CH3enc+"#"+lkey+this.COOHenc+"\\s.*\\s"+this.CH3enc+"\\/"+lkey+this.COOHenc, "g"), templatedatax);
+							templatedata = templatedata.replace(new RegExp("\\t*"+this.CH3+"#"+lkey+this.COOH+"(||.*||\\s||\\s.*||.*\\s*||\\s.*\\s*||\\s*.*\\s*)"+this.CH3+"\\/"+lkey+this.COOH, "g"), templatedatax);
+							templatedata = templatedata.replace(new RegExp("\\t*"+this.CH3enc+"#"+lkey+this.COOHenc+"(||.*||\\s||\\s.*||.*\\s*||\\s.*\\s*||\\s*.*\\s*)"+this.CH3enc+"\\/"+lkey+this.COOHenc, "g"), templatedatax);
 						}
                        			} else {
 						for(var first in obj[key]) {
