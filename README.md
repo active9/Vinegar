@@ -1,6 +1,8 @@
 Vinegar.js
 ==========
 
+[VinegarJS.com](http://www.vinegarjs.com/)
+
 A Simple Robust Javascript &lt;{Template Engine}>
 
 INSTALL:
