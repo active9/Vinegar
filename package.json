@@ -1,0 +1,28 @@
+{
+  "name": "Vinegar",
+  "version": "1.0.1",
+  "description": "A Simple Robust Javascript Template Engine",
+  "main": "Vinegar.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "tests/tests.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/active9/Vinegar.git"
+  },
+  "keywords": [
+    "template",
+    "engine",
+    "javascript",
+    "middleware"
+  ],
+  "author": "Active 9 LLC.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/active9/Vinegar/issues"
+  },
+  "homepage": "https://github.com/active9/Vinegar"
+}
