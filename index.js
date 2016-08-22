@@ -1,1 +1,1 @@
-console.log("Module exports feature comming soon.. Meanwhile try require('vinegar/Vinegar.js');");
+module.exports = require('./Vinegar.js');

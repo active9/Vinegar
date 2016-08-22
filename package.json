@@ -1,6 +1,6 @@
 {
   "name": "vinegar",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A Simple Robust Javascript Template Engine",
   "main": "Vinegar.js",
   "directories": {

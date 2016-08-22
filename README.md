@@ -12,12 +12,12 @@ npm install vinegar --save
 # USING
 Vinegar.js works both in the browser and in a server environment.
 To include the Vinegar.js file in the head of your page simply include
-it like any other javascript source.
+it like any other javascript source. Within your templates you can define your own Curley brackets / Mustache style syntax repalcement. By default Vinegar uses <{ }> but can easily utilize {{ }} style syntax.
 
 To use Vinegar.js within your NodeJS applications please see the weiv project at http://www.npm.com/projects/weiv/
 
 USAGE:
-Check out the examples folder!
+Check out the examples folder on the github repo
 
 
 #CONTRIBUTING
